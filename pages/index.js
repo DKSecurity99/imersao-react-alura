@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import Head from 'next/head';
 
 import db from '../db.json';
 
@@ -20,22 +21,32 @@ export const QuizContainer = styled.article`
 
 export default function Home() {
   return (
-    <QuizBackground backgroundImage={db.bgPrimary}>
-      <QuizContainer>
-        
-        <Widget>
-          <Widget.Header>
-            <h1>{db.title}</h1>
-          </Widget.Header>
+    <>
+      <Head>
+        <title>DK Quiz - Imersão ReactJS Alura</title>
+      </Head>
+      <QuizBackground backgroundImage={db.bgPrimary}>
+        <QuizContainer>        
+          <Widget>
+            <Widget.Header>
+              <h1>{db.title}</h1>
+            </Widget.Header>
 
-          <Widget.Content>
-            <p>{db.description}</p>
-          </Widget.Content>
-        </Widget>
+            <Widget.Content>
+              <p>{db.description}</p>
+            </Widget.Content>
+          </Widget>
+          
+          <Widget>
+            <Widget.Content>
+              <p>{db.description}</p>
+            </Widget.Content>
+          </Widget>
 
-        <Footer />
-      </QuizContainer>
-      <GithubCorner projectUrl="https://github.com/DKSecurity99/imersao-react-alura"/>
-    </QuizBackground>
+          <Footer />
+        </QuizContainer>
+        <GithubCorner projectUrl="https://github.com/DKSecurity99/imersao-react-alura"/>
+      </QuizBackground>
+    </>
   )
 }
