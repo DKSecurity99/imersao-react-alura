@@ -23,12 +23,16 @@ function Input({ placeholder, onChange, ...rest }) {
   return <InputItem placeholder={placeholder} onChange={onChange} {...rest}/>
 }
 
+Input.defaultProps = {
+  value: '',
+}
+
 Input.propTypes = {
   onChange: PropTypes.func.isRequired,
   placeholder: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   value: PropTypes.string.isRequired,
-  type: PropTypes.string.isRequired,
+  type: PropTypes.string,
 }
 
 
