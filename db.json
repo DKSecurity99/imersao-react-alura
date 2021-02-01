@@ -11,7 +11,8 @@
       "text": "#f1f1f1",
       "mainBg": "#041023",
       "wrong": "#FF2E43",
-      "success": "#36CB5F"
+      "success": "#36CB5F",
+      "gray": "gray"
     },
     "borderRadius": "5px"
   }
