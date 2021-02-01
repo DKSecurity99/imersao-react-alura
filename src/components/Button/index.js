@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
 const ButtonItem = styled.button`
   width: 100%;
@@ -10,6 +11,10 @@ const ButtonItem = styled.button`
   font-weight: 600;
   text-align: center;
   border: none;
+
+  &:disabled {
+    background-color: ${({ theme }) => theme.colors.gray};
+  }
 `;
 
 function Button({ label, type, ...rest }) {
@@ -18,6 +23,12 @@ function Button({ label, type, ...rest }) {
       { label }
     </ButtonItem>
   )
+}
+
+Button.propTypes = {
+  label: PropTypes.string.isRequired,
+  type: PropTypes.oneOf(['submit', 'type', 'button']).isRequired,
+  disabled: PropTypes.bool.isRequired,
 }
 
 export default Button;
