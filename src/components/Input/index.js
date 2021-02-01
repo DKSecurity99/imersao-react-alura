@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
 const InputItem = styled.input`
   width: 100%;
@@ -18,8 +19,17 @@ const InputItem = styled.input`
   }
 `;
 
-function Input({ placeholder, ...rest }) {
-  return <InputItem placeholder={placeholder} {...rest}/>
+function Input({ placeholder, onChange, ...rest }) { 
+  return <InputItem placeholder={placeholder} onChange={onChange} {...rest}/>
 }
+
+Input.propTypes = {
+  onChange: PropTypes.func.isRequired,
+  placeholder: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  value: PropTypes.string.isRequired,
+  type: PropTypes.string.isRequired,
+}
+
 
 export default Input;
