@@ -53,8 +53,18 @@ export default function Home() {
             <Widget.Content>
               
               <form onSubmit={handlerSubmit}>
-                <Input onChange={handlerChange} placeholder="Defina um nome para jogar!" />
-                <Button disabled={name.length === 0} label={`Jogar ${name}`} />
+                <Input 
+                  onChange={handlerChange} 
+                  placeholder="Defina um nome para jogar!" 
+                  name="name"
+                  value={name}
+                  type="text"
+                />
+                <Button 
+                  disabled={name.length === 0} 
+                  label={`Jogar ${name}`}
+                  type="submit"
+                />
               </form>
 
             </Widget.Content>
