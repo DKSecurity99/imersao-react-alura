@@ -1,7 +1,6 @@
-import styled from 'styled-components'
 import Head from 'next/head';
 import { useRouter } from 'next/router';
-import {useState} from 'react';
+import { useState } from 'react';
 
 import db from '../db.json';
 
@@ -11,17 +10,7 @@ import GithubCorner from '../src/components/GitHubCorner';
 import Footer from '../src/components/Footer';
 import Input from '../src/components/Input';
 import Button from '../src/components/Button';
-
-export const QuizContainer = styled.article`
-  width: 100%;
-  max-width: 35rem;
-  padding-top: 4rem;
-  margin: auto 3rem;
-
-  @media screen and (max-width: 500px) {
-    padding-top: 2rem;
-  }
-`;
+import QuizContainer from '../src/components/QuizContainer';
 
 export default function Home() {
   const router = useRouter();
